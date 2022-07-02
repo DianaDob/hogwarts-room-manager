@@ -30,4 +30,16 @@ public class RoomMemory implements RoomDAO {
     public void addRoom(Room room) {
         rooms.add(room);
     }
+
+    @Override
+    public Room getRoomById(int roomId) {
+        Set<Room> rooms = this.getAll();
+        for(Room room : rooms){
+            if(room.getRoomId() == (roomId)){
+                return room;
+            }
+        }
+        return null;
+
+    }
 }

@@ -10,4 +10,5 @@ public interface RoomDAO {
 
     void addRoom(Room room);
 
+    Room getRoomById(int roomId);
 }

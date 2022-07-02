@@ -9,9 +9,16 @@ h1{
 
 table{
     font-style: italic;
-    font-size: larger;
+    font-size: x-large;
     padding: 10px;
 }
 th, td{
     padding: 10px;
+}
+
+.black_magic{
+    color: black;
+    font-size: xxx-large;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: mediumspringgreen;
 }

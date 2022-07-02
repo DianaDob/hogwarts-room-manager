@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hogwarts Rooms</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/rooms.css}" rel="stylesheet"/>
+</head>
+<body th:style="'background: url(/img/background.jpg) no-repeat center center fixed;'">
+<h1>The room you were looking for:</h1>
+<table th:if="${room}" th:style="'background: url(/img/parchment.jpg) center/cover no-repeat;'">
+    <tr>
+        <th>Room Id</th>
+        <th>Room House</th>
+        <th>Room Students</th>
+    </tr>
+    <tr>
+
+        <td th:text="${room.roomId}"/>
+        <td th:text="${room.houseType}"/>
+        <td><p th:each="student: ${room.students}" th:text="${student}"></p></td>
+
+    </tr>
+</table>
+<table th:unless="${room}" th:style="'background: url(/img/dark_mark.jpg) center/cover no-repeat;'">
+    <tr>
+        <th class="black_magic">
+            <p>...has been destroyed</p>
+            <p>by black magic!</p>
+        </th>
+
+    </tr>
+
+</table>
+</body>
+</html>

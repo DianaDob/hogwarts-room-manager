@@ -21,4 +21,14 @@ public class RoomService {
         roomDAO.addRoom(room);
     }
 
+    public Room getRoomById(int roomId) {
+        Set<Room> rooms = this.getAll();
+        for(Room room : rooms){
+            if(room.getRoomId() == (roomId)){
+                return room;
+            }
+        }
+        return null;
+
+    }
 }
