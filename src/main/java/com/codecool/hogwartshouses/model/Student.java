@@ -20,4 +20,9 @@ public class Student {
         this.houseType = houseType;
         this.petType = petType;
     }
+
+    @Override
+    public String toString() {
+        return name + "(pet: " + String.valueOf(petType).toLowerCase() + ")";
+    }
 }
