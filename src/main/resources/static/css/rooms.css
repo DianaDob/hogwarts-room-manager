@@ -1,0 +1,19 @@
+body{
+    color: midnightblue;
+
+}
+h1{
+    text-align: center;
+    font-family: cursive;
+    text-shadow: darkslategray 10px 5px 20px;
+
+}
+
+table{
+    font-style: italic;
+    font-size: larger;
+    padding: 10px;
+}
+th, td{
+    padding: 10px;
+}
