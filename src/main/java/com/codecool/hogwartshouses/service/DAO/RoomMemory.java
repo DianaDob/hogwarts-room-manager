@@ -53,4 +53,14 @@ public class RoomMemory implements RoomDAO {
         }
         rooms.remove(roomToDelete);
     }
+
+    @Override
+    public void renovateRoom(int roomId) {
+        Set<Room> rooms = this.getAll();
+        for(Room room : rooms){
+            if(room.getRoomId() == (roomId)){
+                room.setRenovated(true);
+            }
+        }
+    }
 }

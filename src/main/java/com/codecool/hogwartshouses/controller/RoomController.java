@@ -40,4 +40,10 @@ public class RoomController {
     public void deleteRoom(@PathVariable int roomId){
         roomService.deleteRoom(roomId);
     }
+
+    @PutMapping("/rooms/{roomId}")
+    @ResponseBody
+    public void renovateRoom(@PathVariable int roomId){
+        roomService.renovateRoom(roomId);
+    }
 }

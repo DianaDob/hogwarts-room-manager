@@ -28,4 +28,8 @@ public class RoomService {
     public void deleteRoom(int roomId) {
         roomDAO.deleteRoom(roomId);
     }
+
+    public void renovateRoom(int roomId) {
+        roomDAO.renovateRoom(roomId);
+    }
 }

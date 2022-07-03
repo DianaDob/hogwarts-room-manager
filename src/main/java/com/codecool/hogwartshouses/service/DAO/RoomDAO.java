@@ -13,4 +13,6 @@ public interface RoomDAO {
     Room getRoomById(int roomId);
 
     void deleteRoom(int roomId);
+
+    void renovateRoom(int roomId);
 }
