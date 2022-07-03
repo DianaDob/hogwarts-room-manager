@@ -18,6 +18,8 @@
         <td th:text="${room.roomId}"/>
         <td th:text="${room.houseType}"/>
         <td><p th:each="student: ${room.students}" th:text="${student}"></p></td>
+        <td th:if="${room.isRenovated()}">Yes!</td>
+        <td th:unless="${room.isRenovated()}">Not yet</td>
 
     </tr>
 </table>
