@@ -3,7 +3,6 @@ package com.codecool.hogwartshouses.service.DAO;
 import com.codecool.hogwartshouses.data_sample.RoomCreator;
 import com.codecool.hogwartshouses.model.Room;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Repository;
 
 import java.util.Set;
@@ -41,5 +40,17 @@ public class RoomMemory implements RoomDAO {
         }
         return null;
 
+    }
+
+    @Override
+    public void deleteRoom(int roomId) {
+        Set<Room> rooms = this.getAll();
+        Room roomToDelete = null;
+        for(Room room : rooms){
+            if(room.getRoomId() == (roomId)){
+                roomToDelete = room;
+            }
+        }
+        rooms.remove(roomToDelete);
     }
 }

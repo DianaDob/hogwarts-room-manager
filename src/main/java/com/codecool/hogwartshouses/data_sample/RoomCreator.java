@@ -26,7 +26,7 @@ public class RoomCreator {
         Set<Student> gryffindorStudents = createStudentSetForRoom(HouseType.GRYFFINDOR);
         Set<Student> hufflepuffStudents = createStudentSetForRoom(HouseType.HUFFLEPUFF);
         Set<Student> ravenclawStudents = createStudentSetForRoom(HouseType.RAVENCLAW);
-        Set<Student> slytherinStudents = createStudentSetForRoom(HouseType.HUFFLEPUFF);
+        Set<Student> slytherinStudents = createStudentSetForRoom(HouseType.SLYTHERIN);
 
         rooms.add(Room.builder().roomId(1).students(gryffindorStudents).houseType(HouseType.GRYFFINDOR).build());
         rooms.add(Room.builder().roomId(2).students(hufflepuffStudents).houseType(HouseType.HUFFLEPUFF).build());

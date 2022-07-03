@@ -22,13 +22,10 @@ public class RoomService {
     }
 
     public Room getRoomById(int roomId) {
-        Set<Room> rooms = this.getAll();
-        for(Room room : rooms){
-            if(room.getRoomId() == (roomId)){
-                return room;
-            }
-        }
-        return null;
+        return roomDAO.getRoomById(roomId);
+    }
 
+    public void deleteRoom(int roomId) {
+        roomDAO.deleteRoom(roomId);
     }
 }

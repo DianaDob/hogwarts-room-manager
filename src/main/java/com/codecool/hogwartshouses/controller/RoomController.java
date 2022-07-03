@@ -35,4 +35,9 @@ public class RoomController {
         return "room";
     }
 
+    @DeleteMapping("/rooms/{roomId}")
+    @ResponseBody
+    public void deleteRoom(@PathVariable int roomId){
+        roomService.deleteRoom(roomId);
+    }
 }
