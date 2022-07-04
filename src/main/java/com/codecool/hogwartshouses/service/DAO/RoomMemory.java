@@ -32,7 +32,6 @@ public class RoomMemory implements RoomDAO {
 
     @Override
     public Room getRoomById(int roomId) {
-        Set<Room> rooms = this.getAll();
         for(Room room : rooms){
             if(room.getRoomId() == (roomId)){
                 return room;
@@ -44,7 +43,6 @@ public class RoomMemory implements RoomDAO {
 
     @Override
     public void deleteRoom(int roomId) {
-        Set<Room> rooms = this.getAll();
         Room roomToDelete = null;
         for(Room room : rooms){
             if(room.getRoomId() == (roomId)){
@@ -56,7 +54,6 @@ public class RoomMemory implements RoomDAO {
 
     @Override
     public void renovateRoom(int roomId) {
-        Set<Room> rooms = this.getAll();
         for(Room room : rooms){
             if(room.getRoomId() == (roomId)){
                 room.setRenovated(true);

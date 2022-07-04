@@ -23,6 +23,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return name + "(pet: " + String.valueOf(petType).toLowerCase() + ")";
+        return name + " (pet: " + String.valueOf(petType).toLowerCase() + ")";
     }
 }
