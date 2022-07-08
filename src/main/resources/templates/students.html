@@ -12,12 +12,14 @@
         <th>Student name</th>
         <th>House</th>
         <th>Pet</th>
+        <th>Room number</th>
 
     </tr>
     <tr th:each="student: ${students}">
         <td th:text="${student.name}" />
         <td th:text="${student.houseType}" />
         <td th:text="${student.petType}" />
+        <td th:text="${student.roomNr}" />
 
     </tr>
 </table>

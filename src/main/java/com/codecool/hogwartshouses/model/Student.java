@@ -15,10 +15,13 @@ public class Student {
     private HouseType houseType;
     private PetType petType;
 
-    public Student(String name, HouseType houseType, PetType petType) {
+    private int roomNr;
+
+    public Student(String name, HouseType houseType, PetType petType, int roomNr) {
         this.name = name;
         this.houseType = houseType;
         this.petType = petType;
+        this.roomNr = roomNr;
     }
 
     @Override
