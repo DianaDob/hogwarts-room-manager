@@ -31,6 +31,14 @@ public class RoomController {
         return "available_rooms";
     }
 
+    @GetMapping("/rooms/rat-owners")
+    public String getRatSafeRooms(Model model){
+        Set<Room> safeRooms = roomService.getSafe();
+        TreeSet<Room> sortedSafeRooms = new TreeSet<>(safeRooms);
+        model.addAttribute("rooms", sortedSafeRooms);
+        return "rooms";
+    }
+
     @PostMapping("/rooms")
     public void addRoom(@RequestBody Room room){
         roomService.addRoom(room);

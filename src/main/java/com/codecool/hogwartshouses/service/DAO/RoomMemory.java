@@ -2,6 +2,8 @@ package com.codecool.hogwartshouses.service.DAO;
 
 import com.codecool.hogwartshouses.data_sample.RoomCreator;
 import com.codecool.hogwartshouses.model.Room;
+import com.codecool.hogwartshouses.model.Student;
+import com.codecool.hogwartshouses.model.types.PetType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -35,6 +37,27 @@ public class RoomMemory implements RoomDAO {
             }
         }
         return availableRooms;
+    }
+
+    @Override
+    public Set<Room> getSafe() {
+        Set<Room> safeRooms = new HashSet<>();
+
+        for(Room room : rooms){
+
+            boolean catOrOwlPresent = false;
+
+            for(Student student : room.getStudents()){
+                if(student.getPetType().equals(PetType.CAT) || student.getPetType().equals(PetType.OWL)){
+                    catOrOwlPresent = true;
+                    break;
+                }
+            }
+            if(!catOrOwlPresent){
+                safeRooms.add(room);
+            }
+        }
+        return safeRooms;
     }
 
     @Override

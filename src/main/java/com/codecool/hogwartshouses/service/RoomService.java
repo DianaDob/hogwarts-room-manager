@@ -21,6 +21,10 @@ public class RoomService {
         return roomDAO.getAvailable();
     }
 
+    public Set<Room> getSafe(){
+        return roomDAO.getSafe();
+    }
+
     public void addRoom(Room room){
         roomDAO.addRoom(room);
     }

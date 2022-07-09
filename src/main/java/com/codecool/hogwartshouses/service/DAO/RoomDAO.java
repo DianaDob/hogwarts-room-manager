@@ -10,6 +10,8 @@ public interface RoomDAO {
 
     Set<Room> getAvailable();
 
+    Set<Room> getSafe();
+
     void addRoom(Room room);
 
     Room getRoomById(int roomId);
@@ -17,4 +19,5 @@ public interface RoomDAO {
     void deleteRoom(int roomId);
 
     void renovateRoom(int roomId);
+
 }
