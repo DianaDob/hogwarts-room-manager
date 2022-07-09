@@ -34,9 +34,18 @@ public class RoomCreator {
         Set<Room> allRooms = new HashSet<>();
         allRooms.addAll(initialRooms);
         allRooms.addAll(extraRooms);
+        setIfRoomIsFull(allRooms);
 
         return allRooms;
     //TODO
+    }
+
+    private void setIfRoomIsFull(Set<Room> allRooms) {
+        for(Room room : allRooms){
+            if(room.getStudents().size() == ROOM_CAPACITY){
+                room.setFull(true);
+            }
+        }
     }
 
     private Set<Student> findRoomlessStudents() {

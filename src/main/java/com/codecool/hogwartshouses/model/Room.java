@@ -16,14 +16,15 @@ public class Room implements Comparable<Room>{
     private int roomId;
     private Set<Student> students;
     private HouseType houseType;
-
     private boolean renovated;
+    private boolean full;
 
     public Room(int roomId, Set<Student> students, HouseType houseType) {
         this.roomId = roomId;
         this.students = students;
         this.houseType = houseType;
         this.renovated = false;
+        this.full = false;
     }
 
     @Override

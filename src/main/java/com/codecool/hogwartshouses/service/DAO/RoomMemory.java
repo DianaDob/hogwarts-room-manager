@@ -5,6 +5,7 @@ import com.codecool.hogwartshouses.model.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Repository
@@ -23,6 +24,17 @@ public class RoomMemory implements RoomDAO {
     @Override
     public Set<Room> getAll() {
         return rooms;
+    }
+
+    @Override
+    public Set<Room> getAvailable() {
+        Set<Room> availableRooms = new HashSet<>();
+        for(Room room : rooms){
+            if(!room.isFull()){
+                availableRooms.add(room);
+            }
+        }
+        return availableRooms;
     }
 
     @Override

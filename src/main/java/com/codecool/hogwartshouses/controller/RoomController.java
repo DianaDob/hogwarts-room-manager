@@ -23,6 +23,14 @@ public class RoomController {
         return "rooms";
     }
 
+    @GetMapping("rooms/available")
+    public String getAvailableRooms(Model model){
+        Set<Room> availableRooms = roomService.getAvailable();
+        TreeSet<Room> sortedAvailableRooms = new TreeSet<>(availableRooms);
+        model.addAttribute("rooms", sortedAvailableRooms);
+        return "available_rooms";
+    }
+
     @PostMapping("/rooms")
     public void addRoom(@RequestBody Room room){
         roomService.addRoom(room);

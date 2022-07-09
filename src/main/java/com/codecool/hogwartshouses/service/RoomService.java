@@ -17,6 +17,10 @@ public class RoomService {
         return roomDAO.getAll();
     }
 
+    public Set<Room> getAvailable(){
+        return roomDAO.getAvailable();
+    }
+
     public void addRoom(Room room){
         roomDAO.addRoom(room);
     }
