@@ -6,7 +6,7 @@
     <link th:href="@{/css/rooms.css}" rel="stylesheet" />
 </head>
 <body th:style="'background: url(/img/background.jpg) no-repeat center center fixed;'">
-<h1>Rooms</h1>
+<h1 th:text="${title}">Rooms</h1>
 <table th:style="'background: url(/img/parchment.jpg) center/cover no-repeat;'">
     <tr>
         <th>Room Id</th>

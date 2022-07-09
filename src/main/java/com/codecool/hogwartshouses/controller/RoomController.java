@@ -20,6 +20,7 @@ public class RoomController {
         Set<Room> rooms = roomService.getAll();
         TreeSet<Room> sortedRooms = new TreeSet<>(rooms);
         model.addAttribute("rooms", sortedRooms);
+        model.addAttribute("title", "Rooms");
         return "rooms";
     }
 
@@ -28,7 +29,8 @@ public class RoomController {
         Set<Room> availableRooms = roomService.getAvailable();
         TreeSet<Room> sortedAvailableRooms = new TreeSet<>(availableRooms);
         model.addAttribute("rooms", sortedAvailableRooms);
-        return "available_rooms";
+        model.addAttribute("title", "Available Rooms");
+        return "rooms";
     }
 
     @GetMapping("/rooms/rat-owners")
@@ -36,6 +38,7 @@ public class RoomController {
         Set<Room> safeRooms = roomService.getSafe();
         TreeSet<Room> sortedSafeRooms = new TreeSet<>(safeRooms);
         model.addAttribute("rooms", sortedSafeRooms);
+        model.addAttribute("title", "Rooms for Rat Owners");
         return "rooms";
     }
 
