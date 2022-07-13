@@ -1,16 +1,22 @@
 
 h1{
     text-align: center;
-    font-family: cursive;
+    font-family: 'Griffy', cursive;
+    font-size: xxx-large;
     text-shadow: darkslategray 10px 5px 20px;
     color: midnightblue;
+    margin-top: 50px;
+    margin-bottom: 40px;
 
 }
 
 table{
     font-style: italic;
+    font-family: 'Griffy', cursive;
     font-size: x-large;
     padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 th, td{
     padding: 10px;
