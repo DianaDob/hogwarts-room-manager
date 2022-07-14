@@ -78,20 +78,20 @@ public class RoomMemory implements RoomDAO {
 
     @Override
     public void deleteRoom(int roomId) {
-        Room roomToDelete = null;
         for(Room room : rooms){
             if(room.getRoomId() == (roomId)){
-                roomToDelete = room;
+                rooms.remove(room);
             }
         }
-        rooms.remove(roomToDelete);
     }
 
     @Override
     public void renovateRoom(int roomId) {
         for(Room room : rooms){
             if(room.getRoomId() == (roomId)){
+                rooms.remove(room);
                 room.setRenovated(true);
+                rooms.add(room);
             }
         }
     }
