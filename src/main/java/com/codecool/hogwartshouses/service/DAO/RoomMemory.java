@@ -85,7 +85,9 @@ public class RoomMemory implements RoomDAO {
     @Override
     public void renovateRoom(int roomId) {
         Room roomToRenovate = getRoomById(roomId);
+        rooms.remove(roomToRenovate);
         roomToRenovate.setRenovated(true);
+        rooms.add(roomToRenovate);
 
     }
 }
