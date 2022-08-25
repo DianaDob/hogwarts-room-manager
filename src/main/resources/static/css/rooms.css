@@ -10,6 +10,19 @@ h1{
 
 }
 
+button{
+    justify-content: center;
+    font-size: large;
+    color: black;
+    background: sandybrown;
+    border-style: groove;
+    border-radius: 5px;
+    text-shadow: #e0e0e0 1px 1px 0;
+    padding: 10px;
+    width: 102px;
+
+}
+
 table{
     font-style: italic;
     font-family: 'Griffy', cursive;
