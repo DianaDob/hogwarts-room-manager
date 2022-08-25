@@ -4,9 +4,8 @@
     <title>Hogwarts Rooms</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link th:href="@{/css/rooms.css}" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Griffy&display=swap" rel="stylesheet">
+    <script src="/js/rooms.js" defer></script>
+
 </head>
 <body th:style="'background: url(/img/background.jpg) no-repeat center center fixed;'">
 <h1 th:text="${title}">Rooms</h1>
@@ -23,6 +22,8 @@
         <td><p th:each="student: ${room.students}" th:text="${student}"></p></td>
         <td th:if="${room.isRenovated()}">Yes!</td>
         <td th:unless="${room.isRenovated()}">Not yet</td>
+        <td><button th:id="renovate + ${room.roomId}" th:class="renovate-button">Renovate</button></td>
+        <td><button th:id="delete + ${room.roomId}" th:class="delete-button">Delete</button></td>
 
     </tr>
 </table>
