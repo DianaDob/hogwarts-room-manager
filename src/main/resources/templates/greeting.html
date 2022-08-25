@@ -6,6 +6,8 @@
     <link th:href="@{/css/greeting.css}" rel="stylesheet" />
 </head>
 <body th:style="'background: url(/img/background.jpg) no-repeat center center fixed;'">
-<p th:text="'Hello, ' + ${name} + '!'"></p>
+<h1 th:text="'Welcome to ' + ${name} + '!'"></h1>
+<div id="button-div"><button><a th:href="@{/rooms}">Rooms</a></button></div>
+
 </body>
 </html>
