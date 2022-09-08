@@ -16,12 +16,12 @@
         <th>Room Students</th>
         <th>Renovated?</th>
     </tr>
-    <tr th:each="room: ${rooms}">
+    <tr th:id="${room.roomId}" th:each="room: ${rooms}">
         <td th:text="${room.roomId}" />
         <td th:text="${room.houseType}" />
         <td><p th:each="student: ${room.students}" th:text="${student}"></p></td>
-        <td th:if="${room.isRenovated()}">Yes!</td>
-        <td th:unless="${room.isRenovated()}">Not yet</td>
+        <td th:id="renovated + ${room.roomId}" th:if="${room.isRenovated()}">Yes!</td>
+        <td th:id="notrenovated + ${room.roomId}" th:unless="${room.isRenovated()}">Not yet</td>
         <td><button th:id="renovate + ${room.roomId}" th:class="renovate-button">Renovate</button></td>
         <td><button th:id="delete + ${room.roomId}" th:class="delete-button">Delete</button></td>
 
