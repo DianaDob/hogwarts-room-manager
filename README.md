@@ -18,9 +18,10 @@ From the index page, access the room manager page by a button click, where you c
 
 ## Prerequisites
  - [Java 17+](https://www.oracle.com/java/technologies/downloads/#java17)
+ - [Apache Maven 3.8.5 +](https://maven.apache.org/download.cgi)
  
  ## Running application using Maven
- - Open a terminal and navigate to 7_hogwarts_houses_1 folder
+ - Open a terminal and navigate to the project folder
  - Run the following Maven command to start the application:
     - ./mvnw clean spring-boot:run
 
