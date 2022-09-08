@@ -62,7 +62,8 @@ public class RoomController {
 
     @PutMapping("/rooms/{roomId}")
     @ResponseBody
-    public void renovateRoom(@PathVariable int roomId){
+    public boolean renovateRoom(@PathVariable int roomId){
         roomService.renovateRoom(roomId);
+        return roomService.getRoomById(roomId).isRenovated();
     }
 }
