@@ -10,21 +10,37 @@ for(let button of deleteButtons){
     button.addEventListener('click', (event)=>deleteRoom(event))
 }
 
-function renovateRoom(event) {
-    let roomIdIndex = event.target.id.search(/\d/);
-    let roomId = event.target.id[roomIdIndex];
-    fetch(`/rooms/${roomId}`, {method: 'PUT'})
-        .then(() => {
-        window.location.reload();
-    })
+async function renovateRoom(event) {
+    let roomIdIndex = event.target.id.search(/\d+/);
+    let roomId = event.target.id.slice(roomIdIndex);
+    const response = await fetch(`/rooms/${roomId}`, {method: 'PUT'});
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    updateRenovatedInfo(data, roomId);
 }
 
-function deleteRoom(event) {
-    let roomIdIndex = event.target.id.search(/\d/);
-    let roomId = event.target.id[roomIdIndex];
-    console.log(roomId);
-    fetch(`/rooms/${roomId}`, {method: 'DELETE'})
-        .then(() => {
-            window.location.reload();
-        })
+async function deleteRoom(event) {
+    let roomIdIndex = event.target.id.search(/\d+/);
+    let roomId = event.target.id.slice(roomIdIndex);
+    const response =  await fetch(`/rooms/${roomId}`, {method: 'DELETE'});
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    removeRowFromTable(roomId);
+}
+
+function updateRenovatedInfo(renovated, roomId){
+    const constructedId = "notrenovated" + roomId;
+    if(renovated){
+        document.getElementById(constructedId).innerText = "Yes!";
+    }
+    else{
+        console.log(`Something happened, the renovation status of the room is ${renovated}`);
+    }
+}
+
+function removeRowFromTable(roomId) {
+    document.getElementById(roomId).remove();
 }
