@@ -37,7 +37,6 @@ public class RoomCreator {
         setIfRoomIsFull(allRooms);
 
         return allRooms;
-    //TODO
     }
 
     private void setIfRoomIsFull(Set<Room> allRooms) {
