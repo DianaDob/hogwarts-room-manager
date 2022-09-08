@@ -1,10 +1,8 @@
 package com.codecool.hogwartshouses.data_sample;
 
-import com.codecool.hogwartshouses.model.Room;
 import com.codecool.hogwartshouses.model.Student;
 import com.codecool.hogwartshouses.model.types.HouseType;
 import com.codecool.hogwartshouses.model.types.PetType;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -31,7 +29,6 @@ public class StudentCreator {
         students.add(Student.builder().name("Gregory").houseType(HouseType.SLYTHERIN).petType(PetType.NONE).build());
         students.add(Student.builder().name("Cedric").houseType(HouseType.HUFFLEPUFF).petType(PetType.OWL).build());
         return students;
-        //TODO
     }
 
     public StudentCreator() {
