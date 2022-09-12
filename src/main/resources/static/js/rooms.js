@@ -69,16 +69,15 @@ async function postNewRoom(newRoomId, selectMenu){
 
 function updateAddedTableRow(selectedOption, newRoomId) {
     const lastTableRow = table.rows.item(table.rows.length-1);
-    let houseType = lastTableRow.children[1];
-    let students = lastTableRow.children[2];
-    let renovatedStatus = "Not yet";
-    let renovateButton = `<td><button id="renovate + ${newRoomId}" class="renovate-button">Renovate</button></td>`;
-    let deleteButton = `<td><button th:id="delete + ${newRoomId}" class="delete-button">Delete</button></td>`;
-    houseType.innerHTML = selectedOption;
-    students.innerHTML = "";
-    lastTableRow.insertAdjacentHTML('beforeend', `<td>${renovatedStatus}</td>`);
-    lastTableRow.insertAdjacentHTML('beforeend', renovateButton);
-    lastTableRow.insertAdjacentHTML('beforeend', deleteButton);
+    lastTableRow.children[0].innerHTML = `<button id="room${newRoomId}" class="room">${newRoomId}</button>`;
+    lastTableRow.children[1].innerHTML = selectedOption; // houseType
+    lastTableRow.children[2].innerHTML = ""; // students
+    lastTableRow.insertAdjacentHTML('beforeend', `<td id="notrenovated${newRoomId}">Not yet</td>`);
+    lastTableRow.insertAdjacentHTML('beforeend', `<td><button id="renovate${newRoomId}" class="renovate-button">Renovate</button></td>`);
+    lastTableRow.insertAdjacentHTML('beforeend', `<td><button id="delete${newRoomId}" class="delete-button">Delete</button></td>`);
+    document.getElementById("room" + newRoomId).addEventListener('click', (event)=>goToRoom(event));
+    document.getElementById("renovate" + newRoomId).addEventListener('click', (event)=>renovateRoom(event));
+    document.getElementById("delete" + newRoomId).addEventListener('click', (event)=>deleteRoom(event));
 
 }
 
