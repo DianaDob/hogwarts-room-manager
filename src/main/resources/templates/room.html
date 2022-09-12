@@ -4,14 +4,16 @@
     <title>Hogwarts Rooms</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link th:href="@{/css/rooms.css}" rel="stylesheet"/>
+    <script src="/js/room.js" defer></script>
 </head>
-<body th:style="'background: url(/img/background.jpg) no-repeat center center fixed;'">
+<body th:style="'background: url(/img/spider-web.jpg) no-repeat right top, url(/img/background.jpg) no-repeat center center fixed;'">
 <h1>The room you were looking for:</h1>
 <table th:if="${room}" th:style="'background: url(/img/parchment.jpg) center/cover no-repeat;'">
     <tr>
         <th>Room Id</th>
         <th>Room House</th>
         <th>Room Students</th>
+        <th>Renovated?</th>
     </tr>
     <tr>
 
@@ -33,5 +35,11 @@
     </tr>
 
 </table>
+
+<div class="centered-button-container">
+    <button id="back">
+        Back to rooms
+    </button>
+</div>
 </body>
 </html>
