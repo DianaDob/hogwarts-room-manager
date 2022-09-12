@@ -1,5 +1,6 @@
 let renovateButtons = document.getElementsByClassName('renovate-button');
 let deleteButtons = document.getElementsByClassName('delete-button');
+let roomIdButtons = document.getElementsByClassName('room');
 let addRoomButton = document.getElementById("add-room");
 let table = document.getElementsByTagName('tbody')[0];
 
@@ -10,9 +11,12 @@ for(let button of renovateButtons){
     button.addEventListener('click', (event)=>renovateRoom(event))
 }
 
-
 for(let button of deleteButtons){
     button.addEventListener('click', (event)=>deleteRoom(event))
+}
+
+for(let button of roomIdButtons){
+    button.addEventListener('click', (event)=>goToRoom(event))
 }
 
 function addRoom() {
@@ -76,6 +80,12 @@ function updateAddedTableRow(selectedOption, newRoomId) {
     lastTableRow.insertAdjacentHTML('beforeend', renovateButton);
     lastTableRow.insertAdjacentHTML('beforeend', deleteButton);
 
+}
+
+function goToRoom(event){
+    let roomIdIndex = event.target.id.search(/\d+/);
+    let roomId = event.target.id.slice(roomIdIndex);
+    window.location.href = `/rooms/${roomId}`;
 }
 
 async function renovateRoom(event) {
