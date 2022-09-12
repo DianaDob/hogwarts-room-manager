@@ -18,7 +18,7 @@
         <th>Renovated?</th>
     </tr>
     <tr th:id="${room.roomId}" th:each="room: ${rooms}">
-        <td th:text="${room.roomId}" />
+        <td><button th:id="room + ${room.roomId}" th:text="${room.roomId}" th:class="room"></button></td>
         <td th:text="${room.houseType}" />
         <td><p th:each="student: ${room.students}" th:text="${student}"></p></td>
         <td th:id="renovated + ${room.roomId}" th:if="${room.isRenovated()}">Yes!</td>
