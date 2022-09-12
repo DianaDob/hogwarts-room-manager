@@ -23,6 +23,10 @@ button{
 
 }
 
+.room{
+    width: 50px;
+}
+
 table{
     font-style: italic;
     font-family: 'Griffy', cursive;
